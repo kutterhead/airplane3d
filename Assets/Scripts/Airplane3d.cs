@@ -10,6 +10,9 @@ public class Airplane3d : MonoBehaviour
     public float potenciaMotor = 100f;
 
     public float roll = 10f;
+    public float pitch = 10f;
+    public float yaw = 10f;
+    public float Vmax = 10f;
 
     void Start()
     {
@@ -22,17 +25,22 @@ public class Airplane3d : MonoBehaviour
         float velocidadZ = rb.velocity.magnitude;
         print(velocidadZ);
 
-        if (velocidadZ<20f)
+        if (velocidadZ< Vmax)
         {
             rb.AddForce(transform.forward * potenciaMotor , ForceMode.Force);
         }
         //rb.AddForce(transform.forward * potenciaMotor * Input.GetAxis("Vertical"), ForceMode.Force);
 
-        rb.AddTorque(transform.forward * velocidadZ * -Input.GetAxis("Horizontal") * roll, ForceMode.Force);
-        rb.AddTorque(transform.up * velocidadZ * Input.GetAxis("Horizontal") * roll, ForceMode.Force);
+        if (velocidadZ > Vmax/2)//esta es la velocidad de despegue
+        {
+            rb.AddForce(transform.forward * potenciaMotor, ForceMode.Force);
+            rb.AddTorque(transform.forward * velocidadZ * -Input.GetAxis("Horizontal") * roll, ForceMode.Force);
+            rb.AddTorque(transform.up * velocidadZ * Input.GetAxis("Horizontal") * yaw, ForceMode.Force);
 
 
-        rb.AddTorque(transform.right * velocidadZ * Input.GetAxis("Vertical") * roll, ForceMode.Force);
+            rb.AddTorque(transform.right * velocidadZ * Input.GetAxis("Vertical") * pitch, ForceMode.Force);
+        }
+
 
 
 
