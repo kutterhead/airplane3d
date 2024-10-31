@@ -133,7 +133,6 @@ GameObject:
   - component: {fileID: 481983231}
   - component: {fileID: 481983230}
   - component: {fileID: 481983229}
-  - component: {fileID: 481983232}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -215,20 +214,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 3189512244580373131}
   m_LocalEulerAnglesHint: {x: 18.14, y: 0, z: 0}
---- !u!114 &481983232
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 481983228}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 19dc01d2730e80f46869916fb24e8636, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 3189512244580373131}
-  smoothness: 0.8
 --- !u!1 &700907899
 GameObject:
   m_ObjectHideFlags: 0
@@ -778,7 +763,7 @@ GameObject:
   - component: {fileID: 4325778499989613028}
   - component: {fileID: 772676506938027840}
   - component: {fileID: 4325778499989613030}
-  - component: {fileID: 4325778499989613029}
+  - component: {fileID: 4325778499989613031}
   m_Layer: 0
   m_Name: ComPlaneV3
   m_TagString: Untagged
@@ -795,7 +780,7 @@ Transform:
   m_GameObject: {fileID: 2812705569944143921}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.48, z: -154}
+  m_LocalPosition: {x: 0, y: 2.011, z: -154}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -925,19 +910,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &4325778499989613029
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2812705569944143921}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 38d82d104e0e5a449a01e6ab14dc3499, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  body: {fileID: 0}
 --- !u!54 &4325778499989613030
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -946,7 +918,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2812705569944143921}
   serializedVersion: 4
-  m_Mass: 100
+  m_Mass: 200000
   m_Drag: 0.1
   m_AngularDrag: 1
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -965,6 +937,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 2
+--- !u!114 &4325778499989613031
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2812705569944143921}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3448c485b67a5b741a22a7aa792514e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  potenciaMotor: 100000
+  roll: 1000
 --- !u!1 &5118592350690717242
 GameObject:
   m_ObjectHideFlags: 0
