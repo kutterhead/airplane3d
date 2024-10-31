@@ -33,7 +33,7 @@ public class Airplane3d : MonoBehaviour
 
         if (velocidadZ > Vmax/2)//esta es la velocidad de despegue
         {
-            rb.AddForce(transform.forward * potenciaMotor, ForceMode.Force);
+            //rb.AddForce(transform.forward * potenciaMotor, ForceMode.Force);
             rb.AddTorque(transform.forward * velocidadZ * -Input.GetAxis("Horizontal") * roll, ForceMode.Force);
             rb.AddTorque(transform.up * velocidadZ * Input.GetAxis("Horizontal") * yaw, ForceMode.Force);
 
